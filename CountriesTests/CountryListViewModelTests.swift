@@ -9,27 +9,16 @@ import XCTest
 import Combine
 @testable import Countries
 
-// A fake service that immediately returns stub data
-private final class MockCountryService: CountryServiceProtocol {
-    let stub: [Country]
-    
-    init(_ stub: [Country]) { self.stub = stub }
-    
-    func fetchCountries() -> AnyPublisher<[Country], Error> {
-        Just(stub)
-            .setFailureType(to: Error.self)
-            .eraseToAnyPublisher()
-    }
-}
-
+@MainActor
 final class CountryListViewModelTests: XCTestCase {
-    var viewModel: CountryListViewModel!
-    var cancellables = Set<AnyCancellable>()
+    private var viewModel: CountryListViewModel!
+    private var cancellables: Set<AnyCancellable>!
     
-    @MainActor
     override func setUp() {
         super.setUp()
-        // Stub data matching the Country model
+        cancellables = []
+        
+        // Stub data
         let stubCountries = [
             Country(
                 capital: "Montevideo",
@@ -54,45 +43,61 @@ final class CountryListViewModelTests: XCTestCase {
         viewModel = CountryListViewModel(service: MockCountryService(stubCountries))
     }
     
-    @MainActor
-    func testEmptySearchShowsAll() {
-        let expectation = expectation(description: "filtered update")
-        viewModel.$filtered
-            .sink { countries in
-                XCTAssertEqual(countries.count, 2)
-                expectation.fulfill()
-            }
-            .store(in: &cancellables)
-        wait(for: [expectation], timeout: 1)
+    override func tearDown() {
+        cancellables = nil
+        viewModel = nil
+        super.tearDown()
     }
     
-    @MainActor
-    func testFilteringByName() {
-        let expectation = expectation(description: "filtered update")
+    func testEmptySearchShowsAll() {
+        let expectation = expectation(description: "filtered emits full list")
+        
         viewModel.$filtered
             .dropFirst()
-            .sink { countries in
-                XCTAssertEqual(countries.map { $0.code }, ["UY"])
-                expectation.fulfill()
-            }
+            .first(where: { $0.count == 2 })
+            .sink { _ in expectation.fulfill() }
             .store(in: &cancellables)
         
-        viewModel.searchText = "uru"
-        wait(for: [expectation], timeout: 1)
+        wait(for: [expectation], timeout: 1.0)
     }
     
-    @MainActor
-    func testFilteringByCapital() {
-        let expectation = expectation(description: "filtered update")
+    func testFilteringByName() {
+        let expectation = expectation(description: "filter by country name")
+        
         viewModel.$filtered
             .dropFirst()
-            .sink { countries in
-                XCTAssertEqual(countries.map { $0.code }, ["US"])
-                expectation.fulfill()
-            }
+            .first(where: { $0.map(\.code) == ["UY"] })
+            .sink { _ in expectation.fulfill() }
+            .store(in: &cancellables)
+        
+        viewModel.searchText = "URU"
+        
+        wait(for: [expectation], timeout: 1.0)
+    }
+    
+    func testFilteringByCapital() {
+        let expectation = expectation(description: "filter by capital name")
+        
+        viewModel.$filtered
+            .dropFirst()
+            .first(where: { $0.map(\.code) == ["US"] })
+            .sink { _ in expectation.fulfill() }
             .store(in: &cancellables)
         
         viewModel.searchText = "wash"
-        wait(for: [expectation], timeout: 1)
+        
+        wait(for: [expectation], timeout: 1.0)
+    }
+}
+
+private final class MockCountryService: CountryServiceProtocol {
+    let stub: [Country]
+    
+    init(_ stub: [Country]) { self.stub = stub }
+    
+    func fetchCountries() -> AnyPublisher<[Country], Error> {
+        Just(stub)
+            .setFailureType(to: Error.self)
+            .eraseToAnyPublisher()
     }
 }
