@@ -13,7 +13,7 @@ final class CountryListViewController: UIViewController {
     private let searchController = UISearchController(searchResultsController: nil)
     private let viewModel = CountryListViewModel()
     private var cancellables = Set<AnyCancellable>()
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         title = "Countries"
@@ -22,16 +22,16 @@ final class CountryListViewController: UIViewController {
         setupSearchController()
         bindViewModel()
     }
-
+    
     // MARK: - Setup
-
+    
     private func setupTableView() {
         tableView.translatesAutoresizingMaskIntoConstraints = false
         tableView.register(CountryCell.self, forCellReuseIdentifier: CountryCell.reuseID)
         tableView.dataSource = self
         tableView.estimatedRowHeight = 60
         tableView.rowHeight = UITableView.automaticDimension
-
+        
         view.addSubview(tableView)
         
         NSLayoutConstraint.activate([
@@ -41,13 +41,13 @@ final class CountryListViewController: UIViewController {
             tableView.bottomAnchor.constraint(equalTo: view.bottomAnchor)
         ])
     }
-
+    
     private func setupSearchController() {
         searchController.obscuresBackgroundDuringPresentation = false
         searchController.searchBar.placeholder = "Search by name or capital"
         navigationItem.searchController = searchController
         definesPresentationContext = true
-
+        
         // Bind search bar text to the view model
         searchController.searchBar
             .publisher(for: \.text)
@@ -55,9 +55,9 @@ final class CountryListViewController: UIViewController {
             .assign(to: \.searchText, on: viewModel)
             .store(in: &cancellables)
     }
-
+    
     // MARK: - Binding
-
+    
     private func bindViewModel() {
         viewModel.$filtered
             .receive(on: DispatchQueue.main)
@@ -65,7 +65,7 @@ final class CountryListViewController: UIViewController {
                 self?.tableView.reloadData()
             }
             .store(in: &cancellables)
-
+        
         viewModel.$errorMessage
             .compactMap { $0 }
             .sink { [weak self] message in
@@ -73,7 +73,7 @@ final class CountryListViewController: UIViewController {
             }
             .store(in: &cancellables)
     }
-
+    
     private func presentAlert(title: String, message: String) {
         let ac = UIAlertController(title: title, message: message, preferredStyle: .alert)
         ac.addAction(UIAlertAction(title: "OK", style: .default))
@@ -87,11 +87,11 @@ extension CountryListViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         viewModel.filtered.count
     }
-
+    
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: CountryCell.reuseID, for: indexPath) as? CountryCell
         else { return UITableViewCell() }
-
+        
         let country = viewModel.filtered[indexPath.row]
         cell.configure(with: country)
         return cell
