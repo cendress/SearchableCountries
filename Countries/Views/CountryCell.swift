@@ -50,6 +50,7 @@ final class CountryCell: UITableViewCell {
         NSLayoutConstraint.activate([
             topLabel.topAnchor.constraint(equalTo: contentView.layoutMarginsGuide.topAnchor),
             topLabel.leadingAnchor.constraint(equalTo: contentView.layoutMarginsGuide.leadingAnchor),
+            topLabel.trailingAnchor.constraint(equalTo: codeLabel.leadingAnchor, constant: 4),
             
             codeLabel.topAnchor.constraint(equalTo: contentView.layoutMarginsGuide.topAnchor),
             codeLabel.centerYAnchor.constraint(equalTo: topLabel.centerYAnchor),
