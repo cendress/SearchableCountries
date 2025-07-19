@@ -16,6 +16,8 @@ final class CountryListViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        navigationController?.navigationBar.prefersLargeTitles = true
+        navigationItem.largeTitleDisplayMode = .always
         title = "Countries"
         view.backgroundColor = .systemBackground
         setupTableView()
