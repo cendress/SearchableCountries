@@ -15,6 +15,7 @@
 		9DB57EF02E2BE6B200E96097 /* Country.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DB57EEF2E2BE6B200E96097 /* Country.swift */; };
 		9DB57EF22E2BE6B500E96097 /* Language.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DB57EF12E2BE6B500E96097 /* Language.swift */; };
 		9DB57EF42E2BE6B600E96097 /* Currency.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DB57EF32E2BE6B600E96097 /* Currency.swift */; };
+		9DB57F012E2BEDC600E96097 /* CountryService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DB57F002E2BEDC600E96097 /* CountryService.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +48,7 @@
 		9DB57EEF2E2BE6B200E96097 /* Country.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Country.swift; sourceTree = "<group>"; };
 		9DB57EF12E2BE6B500E96097 /* Language.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Language.swift; sourceTree = "<group>"; };
 		9DB57EF32E2BE6B600E96097 /* Currency.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Currency.swift; sourceTree = "<group>"; };
+		9DB57F002E2BEDC600E96097 /* CountryService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryService.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
@@ -126,6 +128,7 @@
 				9DB57EFA2E2BEA1F00E96097 /* Models */,
 				9DB57EFE2E2BEBE800E96097 /* Views */,
 				9DB57ED82E2BE22200E96097 /* ViewController.swift */,
+				9DB57EFF2E2BEDA300E96097 /* Services */,
 				9DB57EFD2E2BEBC300E96097 /* Resources */,
 			);
 			path = Countries;
@@ -145,6 +148,14 @@
 				9DB57ED62E2BE22200E96097 /* LaunchScreen.storyboard */,
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		9DB57EFF2E2BEDA300E96097 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				9DB57F002E2BEDC600E96097 /* CountryService.swift */,
+			);
+			path = Services;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -292,6 +303,7 @@
 			files = (
 				9DB57EF42E2BE6B600E96097 /* Currency.swift in Sources */,
 				9DB57EF02E2BE6B200E96097 /* Country.swift in Sources */,
+				9DB57F012E2BEDC600E96097 /* CountryService.swift in Sources */,
 				9DB57EDD2E2BE22200E96097 /* ViewController.swift in Sources */,
 				9DB57EDE2E2BE22200E96097 /* AppDelegate.swift in Sources */,
 				9DB57EF22E2BE6B500E96097 /* Language.swift in Sources */,
