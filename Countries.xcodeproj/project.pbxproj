@@ -18,6 +18,7 @@
 		9DB57F012E2BEDC600E96097 /* CountryService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DB57F002E2BEDC600E96097 /* CountryService.swift */; };
 		9DB57F072E2C002E00E96097 /* CountryListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DB57F062E2C002E00E96097 /* CountryListViewModel.swift */; };
 		9DB57F0A2E2C08F700E96097 /* CountryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DB57F092E2C08F700E96097 /* CountryCell.swift */; };
+		9DB57F0C2E2C0AD500E96097 /* CountryListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DB57F0B2E2C0AD500E96097 /* CountryListViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -43,7 +44,7 @@
 		9DB57EBF2E2B1CC000E96097 /* CountriesUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CountriesUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		9DB57ED32E2BE22200E96097 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9DB57ED42E2BE22200E96097 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		9DB57ED52E2BE22200E96097 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		9DB57ED52E2BE22200E96097 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = SOURCE_ROOT; };
 		9DB57ED72E2BE22200E96097 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		9DB57ED82E2BE22200E96097 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		9DB57ED92E2BE22200E96097 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -53,6 +54,7 @@
 		9DB57F002E2BEDC600E96097 /* CountryService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryService.swift; sourceTree = "<group>"; };
 		9DB57F062E2C002E00E96097 /* CountryListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryListViewModel.swift; sourceTree = "<group>"; };
 		9DB57F092E2C08F700E96097 /* CountryCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryCell.swift; sourceTree = "<group>"; };
+		9DB57F0B2E2C0AD500E96097 /* CountryListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryListViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
@@ -152,6 +154,7 @@
 				9DB57ED62E2BE22200E96097 /* LaunchScreen.storyboard */,
 				9DB57ED82E2BE22200E96097 /* ViewController.swift */,
 				9DB57F092E2C08F700E96097 /* CountryCell.swift */,
+				9DB57F0B2E2C0AD500E96097 /* CountryListViewController.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -316,6 +319,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				9DB57EF42E2BE6B600E96097 /* Currency.swift in Sources */,
+				9DB57F0C2E2C0AD500E96097 /* CountryListViewController.swift in Sources */,
 				9DB57F072E2C002E00E96097 /* CountryListViewModel.swift in Sources */,
 				9DB57EF02E2BE6B200E96097 /* Country.swift in Sources */,
 				9DB57F012E2BEDC600E96097 /* CountryService.swift in Sources */,
@@ -377,7 +381,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 42VHV36Q58;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = Countries/Info.plist;
+				INFOPLIST_FILE = /Users/christopher/Desktop/Countries/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
@@ -404,7 +408,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 42VHV36Q58;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = Countries/Info.plist;
+				INFOPLIST_FILE = /Users/christopher/Desktop/Countries/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
