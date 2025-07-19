@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		9DB57EDA2E2BE22200E96097 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9DB57ED62E2BE22200E96097 /* LaunchScreen.storyboard */; };
 		9DB57EDB2E2BE22200E96097 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9DB57ED42E2BE22200E96097 /* Assets.xcassets */; };
-		9DB57EDD2E2BE22200E96097 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DB57ED82E2BE22200E96097 /* ViewController.swift */; };
 		9DB57EDE2E2BE22200E96097 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DB57ED32E2BE22200E96097 /* AppDelegate.swift */; };
 		9DB57EDF2E2BE22200E96097 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DB57ED72E2BE22200E96097 /* SceneDelegate.swift */; };
 		9DB57EF02E2BE6B200E96097 /* Country.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DB57EEF2E2BE6B200E96097 /* Country.swift */; };
@@ -46,7 +45,6 @@
 		9DB57ED42E2BE22200E96097 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		9DB57ED52E2BE22200E96097 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = SOURCE_ROOT; };
 		9DB57ED72E2BE22200E96097 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		9DB57ED82E2BE22200E96097 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		9DB57ED92E2BE22200E96097 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		9DB57EEF2E2BE6B200E96097 /* Country.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Country.swift; sourceTree = "<group>"; };
 		9DB57EF12E2BE6B500E96097 /* Language.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Language.swift; sourceTree = "<group>"; };
@@ -152,7 +150,6 @@
 			isa = PBXGroup;
 			children = (
 				9DB57ED62E2BE22200E96097 /* LaunchScreen.storyboard */,
-				9DB57ED82E2BE22200E96097 /* ViewController.swift */,
 				9DB57F092E2C08F700E96097 /* CountryCell.swift */,
 				9DB57F0B2E2C0AD500E96097 /* CountryListViewController.swift */,
 			);
@@ -323,7 +320,6 @@
 				9DB57F072E2C002E00E96097 /* CountryListViewModel.swift in Sources */,
 				9DB57EF02E2BE6B200E96097 /* Country.swift in Sources */,
 				9DB57F012E2BEDC600E96097 /* CountryService.swift in Sources */,
-				9DB57EDD2E2BE22200E96097 /* ViewController.swift in Sources */,
 				9DB57EDE2E2BE22200E96097 /* AppDelegate.swift in Sources */,
 				9DB57EF22E2BE6B500E96097 /* Language.swift in Sources */,
 				9DB57EDF2E2BE22200E96097 /* SceneDelegate.swift in Sources */,
